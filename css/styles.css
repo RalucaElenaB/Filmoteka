@@ -30,7 +30,7 @@ ol {
   margin-right: auto;
   transition: background-color 0.9s, background-image 0.9s;
   background: rgba(0, 0, 0, 0.56);
-  background-image: url("/images/header-background.png");
+  background-image: url("../images/header-background.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
