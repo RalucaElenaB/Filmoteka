@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FILMOTEKA PROIECT JS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body class="page-container">
+    <header class="header">
+      <div class="header-nav">
+        <nav class="header-nav-elements">
+          <ul class="header-nav-list">
+            <li class="header-nav-item">
+              <!-- search movies -->
+              <form class="search-form" id="search-form">
+                <input
+                  id="search-query"
+                  type="text"
+                  name="searchQuery"
+                  autocomplete="off"
+                  placeholder="Search movies..."
+                  pattern="([A-zÀ-ž\s]){1,}"
+                  required
+                />
+                <button id="movies-search" class="btn" type="submit">
+                  Search
+                </button>
+              </form>
+            </li>
+            <li class="header-nav-item">
+              <a
+                href="index.html"
+                target="_self"
+                rel="noopener noreferrer"
+                title="Home page"
+                id="toggleHome"
+                class="header__item-link"
+                >Home
+              </a>
+            </li>
+            <li class="header-nav-item">
+              <a
+                href="library.html"
+                target="_self"
+                rel="noopener noreferrer"
+                title="My library"
+                id="toggleLibrary"
+                class="header__item-link"
+                >My library
+              </a>
+            </li>
+            <li class="header-nav-item">
+              <div class="header-logo-text">
+                <a
+                  href="index.html"
+                  target="_self"
+                  rel="noopener noreferrer"
+                  title="Logo"
+                  class="header__logo-link"
+                >
+                  <svg class="header__svg" width="59" height="59" fill="white">
+                    <use href="./images/icons.svg#logo"></use>
+                  </svg>
+                  <h1 class="header__logo-name">Filmoteka</h1>
+                </a>
+              </div>
+            </li>
+          </ul>
+
+          <div class="hero">
+            <div>
+              <p class="form__error header__notification"></p>
+            </div>
+            <!-- <p class="header__notification"></p> -->
+          </div>
+          <!-- Theme-switcher -->
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- pop up imagine -->
+      <div id="lightbox" class="lightbox">
+        <button id="close-button" class="close-button">×</button>
+        <!-- close button img/fereastra modala -->
+        <img id="lightbox-image" class="lightbox-content" src="" alt="" />
+      </div>
+
+      <!-- container galerie unde am injectat elementele html: li, a, img, H2, p -->
+      <ul id="movie-gallery"></ul>
+
+      <!-- paginare -->
+      <div class="container pagination-container" style="margin-bottom: 60px">
+        <button class="pagination__left-btn" type="button" disabled="">
+          <svg>
+            <path
+              d="M12.586 27.414l-10-10c-0.781-0.781-0.781-2.047 0-2.828l10-10c0.781-0.781 2.047-0.781 2.828 0s0.781 2.047 0 2.828l-6.586 6.586h19.172c1.105 0 2 0.895 2 2s-0.895 2-2 2h-19.172l6.586 6.586c0.39 0.39 0.586 0.902 0.586 1.414s-0.195 1.024-0.586 1.414c-0.781 0.781-2.047 0.781-2.828 0z"
+            ></path>
+          </svg>
+        </button>
+        <ul class="pagination__list" id="pagination-home">
+          <!-- <li class="pagination__item pagination__on" id="1">1</li>
+          <li class="pagination__item pagination__on" id="2">2</li>
+          <li class="pagination__item pagination__on" id="3">3</li>
+          <li class="pagination__item pagination__on" id="4">4</li>
+          <li class="pagination__item pagination__on" id="5">5</li>
+          <li class="pagination__item pagination__on" id="6">6</li>
+          <li class="pagination__item pagination__on" id="7">7</li>
+          <li class="pagination__item pagination__on" id="+">...</li>
+          <li class="pagination__item pagination__on" id="1000">100</li> -->
+        </ul>
+        <button class="pagination__right-btn on" type="button">
+          <svg class="right-svg">
+            <path
+              d="M19.414 27.414l10-10c0.781-0.781 0.781-2.047 0-2.828l-10-10c-0.781-0.781-2.047-0.781-2.828 0s-0.781 2.047 0 2.828l6.586 6.586h-19.172c-1.105 0-2 0.895-2 2s0.895 2 2 2h19.172l-6.586 6.586c-0.39 0.39-0.586 0.902-0.586 1.414s0.195 1.024 0.586 1.414c0.781 0.781 2.047 0.781 2.828 0z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </main>
+    <!-- modal film -->
+    <!-- <div class="js-movie-modal-mask is-hidden"></div>
+    <div class="js-movie-modal is-hidden">
+      <div class="js-movie-modal__content">
+        <button class="js-movie-modal__close-btn">
+          <svg
+            width="30"
+            height="30"
+            viewBox="0 0 30 30"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M8 8L22 22" stroke="black" stroke-width="2"></path>
+            <path d="M8 22L22 8" stroke="black" stroke-width="2"></path>
+          </svg>
+        </button>
+        <div class="js-movie-modal__poster">
+          <img
+            class="js-movie-modal__img"
+            src="https://www.themoviedb.org/t/p/w500/52YBwGJ3cJs54fpBzwnT1lnqgTo.jpg"
+            alt="Totally Killer"
+          />
+        </div>
+        <div class="movie-modal__info-about">
+          <h1 class="js-movie-modal__title">Totally Killer</h1>
+          <div class="movie-modal__info">
+            <div class="movie-modal__info-name">
+              <p class="info-name">Vote / Votes</p>
+              <p class="info-name">Popularity</p>
+              <p class="info-name">Original Title</p>
+              <p class="info-name">Genre</p>
+            </div>
+            <div class="movie-modal__info-value">
+              <p class="js-info-value">
+                <span class="js-info-value__vote">6.9</span> / 
+
+                <span class="js-info-value__votes">377</span>
+              </p>
+              <p class="js-info-value">302.148</p>
+              <p class="js-info-value">Totally Killer</p>
+              <p class="js-info-value">Comedy, Horror</p>
+            </div>
+          </div>
+          <h2 class="movie-modal__about">About</h2>
+          <p class="js-movie-modal__about-text">
+            When the infamous "Sweet Sixteen Killer" returns 35 years after his
+            first murder spree to claim another victim, 17-year-old Jamie
+            accidentally travels back in time to 1987, determined to stop the
+            killer before he can start.
+          </p>
+          <ul class="movie-modal__btn-list">
+            <li class="movie-modal__btn-list-item">
+              <button class="js-movie-modal__btn add-watched" type="button">
+                add to Watched
+              </button>
+            </li>
+            <li class="movie-modal__btn-list-item">
+              <button class="js-movie-modal__btn add-queue" type="button">
+                add to queue
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="is-hidden team-modal" data-team-modal="">
+      <button class="team-modal__btn" data-team-modal-close="">
+        <svg
+          width="30"
+          height="30"
+          viewBox="0 0 30 30"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M8 8L22 22" stroke="black" stroke-width="2"></path>
+          <path d="M8 22L22 8" stroke="black" stroke-width="2"></path>
+        </svg>
+      </button>
+    </div>
+
+    <button type="button" class="btn_top visuallyhidden" title="btn_top">
+      <svg class="btn_top_icon">
+        <use href="/icons.5f35b2c8.svg#icon-arrow-up"></use>
+      </svg>
+    </button> -->
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="container footer__container">
+        <p>© 2023 | All Rights Reserved |</p>
+        <p> Developed with 🧡 by
+           
+            ><a href="https://github.com/RalucaElenaB">GoIT Student</a></span
+          >
+        </p>
+      </div>
+    </footer>
+    <script src="index.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,363 @@
+/* common css */
+ul,
+ol {
+  margin: 0;
+  padding-left: 0;
+  margin-left: 15px;
+  list-style: none;
+}
+/* .container {
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: Roboto;
+} */
+
+.page-container {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-large;
+  margin: 0 auto;
+  width: 90%;
+  font-family: Roboto;
+}
+
+/* header */
+.header {
+  padding-top: 48px;
+  padding-bottom: 97px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: background-color 0.9s, background-image 0.9s;
+  background: rgba(0, 0, 0, 0.56);
+  background-image: url('/images/header-background.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 50px;
+  border-radius: 25px;
+}
+
+.header-logo-text {
+  display: flex;
+  margin-left: -475px;
+}
+
+.header-nav-list {
+  font-family: Roboto;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Spațiu între elemente */
+}
+
+.header__logo-name,
+.header__item-link {
+  color: white;
+  text-decoration: none;
+  margin-left: 25px;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+
+.header__logo-name:hover {
+  color: red;
+}
+.header__svg:hover {
+  color: red;
+}
+.header__item-link {
+  font-weight: bold;
+  gap: 10px;
+  border-radius: 100px;
+  padding: 14px 24px;
+  text-transform: uppercase;
+  color: black;
+  font-size: 12px;
+  font-family: Roboto;
+  word-wrap: break-word;
+  margin: 1px;
+  text-decoration: none;
+  background-color: white;
+  border-radius: 25px;
+  font-weight: 500px;
+  align-items: center;
+  position: relative;
+  top: -90px; /* Valoarea negativă ridică elementul cu 10 pixeli */
+}
+
+.header__logo-link {
+  text-decoration: none;
+  display: flex; /* Setează containerul ca flex */
+  align-items: center; /* Aliniază elementele pe axa verticală */
+}
+
+.header__logo-name {
+  font-family: Roboto;
+  text-decoration: none;
+  margin-left: 16px; /* Creează un spațiu între SVG și text */
+  font-size: 64px;
+  position: relative;
+  top: 150px; /* Valoarea negativă ridică elementul cu 10 pixeli */
+}
+
+.header__svg {
+  position: relative;
+  top: 150px; /* Valoarea negativă ridică elementul cu 10 pixeli */
+}
+#search-query {
+  color: rgba(185, 47, 44, 1);
+  background-color: #fff;
+  width: 180px;
+  height: 40px;
+  border-radius: 50px;
+  margin-left: 50px;
+  font-weight: bold;
+  font-size: 14px;
+  font-family: Roboto;
+  font-weight: 400;
+  word-wrap: break-word;
+  position: relative;
+  top: -100px; /* Valoarea negativă ridică elementul cu 10 pixeli */
+  margin-top: 20px;
+}
+
+.btn {
+  border-radius: 12px;
+  color: rgba(185, 47, 44, 1);
+  background-color: rgb(248, 226, 225);
+  height: 48px;
+  margin-top: 24px;
+  width: 60px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 25px;
+  font-family: Roboto;
+  position: relative;
+  top: -100px; /* Valoarea negativă ridică elementul cu 10 pixeli */
+}
+
+/* main */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  z-index: 999;
+}
+
+.lightbox-content {
+  max-width: 80%;
+  max-height: 80%;
+  margin: 0 auto;
+  display: block;
+  margin-top: 10%;
+  position: relative;
+}
+
+#close-button img {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  padding: 5px 10px;
+  border-radius: 12px;
+  z-index: 1000;
+}
+
+#movie-gallery {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+#movie-gallery li {
+  width: auto; /* Fiecare rând ocupă 30% din lățimea containerului */
+  height: auto;
+  border: 1px solid white; /* Adaugă un contur între rânduri (opțional) */
+  box-sizing: border-box;
+  text-align: center;
+  background-color: #f8f8ff;
+  border: 1px solid rgba(185, 47, 44, 1);
+  padding: 10px;
+  margin: 5px;
+  position: relative;
+  box-shadow: 0 5px 20px rgba(185, 47, 44, 1);
+  transition: background-color 0.3s;
+  border-radius: 25px;
+}
+
+#movie-gallery li:hover {
+  background-color: rgb(248, 226, 225);
+}
+
+#movie-gallery img {
+  width: auto;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  object-fit: cover;
+  transition: transform var(--animation-duration) var(--timing-function);
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#movie-gallery h2 {
+  font-size: 20px;
+  margin: 5px 0;
+  text-decoration: none;
+  font-weight: 500px;
+  line-height: normal;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+#movie-gallery p {
+  font-size: 18px;
+  margin: 1px 0;
+  text-decoration: none;
+  font-weight: 500px;
+  line-height: 24px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  color: rgba(185, 47, 44, 1);
+  font-weight: bold;
+  line-height: 16px;
+  margin-bottom: 5px;
+}
+
+.close-button {
+  position: absolute;
+  top: 190px;
+  left: 1200px;
+  font-size: 25px;
+  cursor: pointer;
+  color: #fff;
+  background: rgba(185, 47, 44, 1);
+  border: none;
+  padding: 5px 10px;
+  border-radius: 25%;
+  z-index: 1000;
+}
+
+#movie-gallery a {
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+  text-align: left;
+  font-weight: bold;
+}
+
+#movie-gallery a:hover,
+#movie-gallery a:focus {
+  color: rgba(185, 47, 44, 1);
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  width: 300px; /* Ajustați la dimensiunile dorite */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+/* paginare */
+.pagination-container {
+  justify-content: center;
+  display: flex;
+}
+
+.pagination__container button {
+  width: 36px;
+  height: 36px;
+  fill: #000;
+  cursor: alias;
+  background-color: #f7f7f7;
+  border: none;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  font-size: 30px;
+  transition: background-color 0.3s linear, fill 0.3s linear;
+  display: flex;
+  position: relative;
+}
+
+.pagination__list {
+  min-width: 294px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  display: flex;
+}
+.pagination__item {
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  margin-right: 25px;
+  transition: background-color 0.3s linear, color 0.3s linear;
+  display: flex;
+}
+
+.pagination__item--current {
+  color: #fff;
+  background-color: rgba(185, 47, 44, 1);
+}
+
+.pagination__left-btn,
+.pagination__right-btn {
+  width: 40px;
+  height: 40px;
+}
+
+.pagination__right-btn:hover {
+  background: rgba(185, 47, 44, 1);
+}
+
+/* footer */
+.footer {
+  background-color: #f7f7f7;
+  max-width: 100%;
+}
+
+.footer .container {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.footer p {
+  font-size: 18px;
+  line-height: 1.19;
+}
+
+.footer__link {
+  margin-left: 5px;
+}
+
+/* my library styles*/

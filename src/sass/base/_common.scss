@@ -1,0 +1,80 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
+
+/* default styles*/
+
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+:focus {
+  outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding-left: 0;
+  // padding: 0;
+  list-style: none;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  min-width: 320px;
+  @include font();
+  font-family: $font-stack;
+  color: $color-text;
+  background-color: $bg-body;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.icon--svg {
+  fill: currentColor;
+}
+
+.hidden {
+  display: none;
+  transition: background-color 0.9s, background-image 0.9s;
+}
