@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FILMOTEKA PROIECT JS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <body class="page-container">
+  <header class="header">
+      <div class="header-nav">
+        <nav class="header-nav-elements">
+          <ul class="header-nav-list">
+            <li class="header-nav-item">
+              
+              <form class="search-form" id="search-form">
+                <input
+                  id="search-query"
+                  type="text"
+                  name="searchQuery"
+                  autocomplete="off"
+                  placeholder="Search movies..."
+                  pattern="([A-zÀ-ž\s]){1,}"
+                  required
+                />
+                <button id="movies-search" class="btn" type="submit">
+                  Search
+                </button>
+              </form>
+            </li>
+            <li class="header-nav-item">
+              <a
+                href="index.html"
+                target="_self"
+                rel="noopener noreferrer"
+                title="Home page"
+                id="toggleHome"
+                class="header__item-link"
+                >Home
+              </a>
+            </li>
+            <li class="header-nav-item">
+              <a
+                href="library.html"
+                target="_self"
+                rel="noopener noreferrer"
+                title="My library"
+                id="toggleLibrary"
+                class="header__item-link"
+                >My library
+              </a>
+            </li>
+            <li class="header-nav-item">
+              <div class="header-logo-text">
+                <a
+                  href="index.html"
+                  target="_self"
+                  rel="noopener noreferrer"
+                  title="Logo"
+                  class="header__logo-link"
+                >
+                  <svg class="header__svg" width="59" height="59" fill="white">
+                    <use href="./images/icons.svg#logo"></use>
+                  </svg>
+                  <h1 class="header__logo-name">Filmoteka</h1>
+                </a>
+              </div>
+            </li>
+          </ul>
+      </div>
+    <button>Watched</button>
+    <button>Queque</button>
+    </header>
+
+
+
+  <!-- corpul paginii -->
+  <main>
+  
+ 
+  </main>
+
+   
+   
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="container footer__container">
+        <p>© 2023 | All Rights Reserved |</p>
+        <p>
+          Developed with 🧡 by
+          <span class="footer__link" data-team-modal-open=""
+            ><a href="https://github.com/RalucaElenaB">GoIT Student</a></span
+          >
+        </p>
+      </div>
+    </footer>
+    <script src="index.js" type="module"></script>
+
+
+  </body>
+</html>
