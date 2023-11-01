@@ -56,7 +56,9 @@ function displayMovies(movies) {
     movieLink.href = `https://www.themoviedb.org/movie/${movie.id}`;
     movieLink.target = "_blank";
     const movieImage = document.createElement("img");
-    movieImage.src = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+    movieImage.src = movie.poster_path
+      ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+      : "https://ik.imagekit.io/tc8jxffbcvf/default-movie-portrait_EmJUj9Tda5wa.jpg?tr=fo-auto,di-";
     movieImage.alt = movie.title;
     movieImage.dataset.src = `https://image.tmdb.org/t/p/original${movie.poster_path}`;
     const movieTitle = document.createElement("h2");
