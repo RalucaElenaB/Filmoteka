@@ -1,8 +1,6 @@
-document.querySelector(".header__svg").style.fill = "red";
-//variabile de verificare
-const moviesSearch = document.getElementById("movies-search"); //button Click for movies
+const moviesSearch = document.getElementById("movies-search");
 
-const movieGallery = document.getElementById("movie-gallery"); //ul
+const movieGallery = document.getElementById("movie-gallery");
 
 const lightbox = document.getElementById("lightbox");
 const lightboxImage = document.getElementById("lightbox-image");
@@ -17,13 +15,13 @@ let isMoviesLoaded = false;
 const url =
   "https://api.themoviedb.org/3/trending/movie/day?api_key=f69b218f7039aed7eae0062e90da9fdc";
 
-form.addEventListener("submit", searchMoviesFunction); //adaugam evenimentul
+form.addEventListener("submit", searchMoviesFunction);
 
 function searchMoviesFunction(e) {
   e.preventDefault();
   clearHTML(movieGallery);
   const input = e.target.elements.searchQuery.value.trim().toLowerCase();
-  // pageNum = 1;
+
   const url = `https://api.themoviedb.org/3/search/movie?api_key=f69b218f7039aed7eae0062e90da9fdc&query=${input}&page=1&language=en-US`;
   createMovieGallery(url);
 }
@@ -41,7 +39,6 @@ function createMovieGallery(url) {
       console.error("Error:", error);
     });
 
-  // Adaugă eveniment pentru a închide lightbox-ul
   lightbox.addEventListener("click", (event) => {
     if (event.target === lightbox) {
       lightbox.style.display = "none";
@@ -77,7 +74,6 @@ function displayMovies(movies) {
     movieItem.appendChild(movieGenre);
     movieGallery.appendChild(movieItem);
 
-    // Adaugă eveniment pentru a deschide lightbox-ul
     movieImage.addEventListener("click", (event) => {
       event.preventDefault();
       lightboxImage.src = event.target.dataset.src;
@@ -190,7 +186,6 @@ const genreList = [
   },
 ];
 
-//paginare
 let previousPageNumber = 1;
 const paginationList = document.getElementById("pagination-home");
 
